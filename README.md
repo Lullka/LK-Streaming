@@ -1,50 +1,17 @@
-# React + TypeScript + Vite
+# LK-Streaming
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Criei este mini site com o objetivo de qualquer ter um local para assistir ao seus filmes, séries, entre outros, de forma acessível e que `guardará informações de onde o usuário parou` e entre outros!
 
-Currently, two official plugins are available:
+## Status do projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ainda não está em pleno funcionamento, apenas algumas funções esão implementadas, o que, por ora, impossibilita ao usuário utilizar a aplicação.
 
-## Expanding the ESLint configuration
+## Como funcionará?
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Basicamente o usuário deverá através deste site e a `API` que disponibilizarei em breve, no qual será possivel fazer os uploads de suas séries, filmes, vídeos, etc, no site! Nela você poderá adicionar `Tags, legendas, banners, photos`, com o objetivo de estilizar ainda mais seu home-streaming!
 
-- Configure the top-level `parserOptions` property like this:
+Será recomendado um HD/SDD para a hospedagem de seus arquivos ou a utilização de serviço em nuvem, o que gerará custos aos usuários, mas seus dados estarão ainda mais seguros
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Previsões
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Estou nesse projeto apenas eu, mas pretendo lança-lo até o final do ano! Até lá darei mais atualizações de como está indo o projeto
