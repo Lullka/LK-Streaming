@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { InfoExtra } from "../extra/infoextra";
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const VideoPlayer = () => {
     const [VideoPlayerStatus, setVideoPlayerStatus] = useState<boolean>(true); /* False: paused */
@@ -39,12 +39,16 @@ export const VideoPlayer = () => {
     const Teste = true;
     
 
+    useEffect(() => {
+        alert('O player personalizado ainda está em faze de estilização e alguns estudos sobre como melhorar seu desempenho. Enquanto isso, apenas o player padrão está disponível')
+    }, [])
+
     return(
         <Container>
             <VideoContainer>
                 <PlayerContainer>
                     <Player>
-                        <video onWaiting={() => setVideoLoading(true)} onPlaying={() => setVideoLoading(false)} ref={Components.player} muted src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoPlay></video>
+                        <video controls  muted onWaiting={() => setVideoLoading(true)} onPlaying={() => setVideoLoading(false)} ref={Components.player} src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoPlay></video>
                     </Player>
                     <PlayerControls>
                         <TopControls>
@@ -111,6 +115,9 @@ const PostContainer = styled.div`
         height: 100%;
         object-fit: cover;
     }
+
+
+    display: none; /* Player ainda em beta, portanto não está disponível sua customização */
 `;
 
 const PlayerContainer = styled.div`
@@ -127,6 +134,18 @@ const Player = styled.div`
         width: 100%;
         height: 100%;
     }
+
+    video::-internal-media-controls-download-button {
+        display:none;
+    }
+
+    video::-webkit-media-controls-enclosure {
+        overflow:hidden;
+    }
+
+    video::-webkit-media-controls-panel {
+        width: calc(100% + 30px); /* Adjust as needed */
+    }
 `;
 
 const PlayerControls = styled.div`
@@ -140,6 +159,10 @@ const PlayerControls = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
+
+
+    display: none; /* Player ainda em beta, portanto não está disponível sua customização */
 `;
 
 const TopControls = styled.div`

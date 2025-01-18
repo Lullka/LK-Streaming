@@ -5,6 +5,8 @@ import { Header } from "./components/header/header.tsx";
 import { InfosAboutSeries } from "./pages/InfosAboutSeries.tsx";
 import { VideoPage } from "./pages/player.tsx";
 import { SearchPage } from "./pages/search.tsx";
+import { FilmsPage } from "./pages/filmsPage.tsx";
+import { SeriesPage } from "./pages/seriesPage.tsx";
 /* import { Teste } from "./pages/teste.tsx"; */
 
 function App() {
@@ -33,8 +35,8 @@ function App() {
         <Route path="/about" element={<InfosAboutSeries/>}/>
         <Route path="/watch" element={<VideoPage/>}/>
         <Route path="/search" element={<SearchPage/>}/>
-        <Route path="/films" element={<SearchPage/>}/>
-        <Route path="/series" element={<SearchPage/>}/>
+        <Route path="/films" element={<FilmsPage/>}/>
+        <Route path="/series" element={<SeriesPage/>}/>
         <Route path="*" element={<Navigate to='/browse'/>}/>
       </Routes>
     </BrowserRouter>

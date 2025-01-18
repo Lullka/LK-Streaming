@@ -12,17 +12,17 @@ export const Header = () => {
     }, [History]);
     
     return(
-        <Container className={URLPath == "/browse" ? "homepage" : ""}>
-            <Nav className={URLPath == "/browse" ? "homepage" : ""}>
+        <Container>
+            <Nav>
                 <Left>
                     <Link to={'/'}><img src="/svg/lkLogo.svg" alt="Logo do Luka" /></Link>
                 </Left>
                 <Center>
                     <ul>
                         <li><Link to={'/browse'} className={URLPath == "/browse" ? "active" : ""}>Início</Link></li>
-                        <li><Link to={'/about'} className={URLPath == "/films" ? "active" : ""}>Filmes</Link></li>
-                        <li><Link to={'/about'} className={URLPath == "/series" ? "active" : ""}>Séries</Link></li>
-                        <li><Link to={'/browse'} className={URLPath == "/portifolio" ? "active" : ""}>Portifólio</Link></li>
+                        <li><Link to={'/films'} className={URLPath == "/films" ? "active" : ""}>Filmes</Link></li>
+                        <li><Link to={'/series'} className={URLPath == "/series" ? "active" : ""}>Séries</Link></li>
+                        <li><a href="https://github.com/Lullka" target="_blank" className={URLPath == "/portifolio" ? "active" : ""}>Portifólio</a></li>
                     </ul>
                 </Center>
                 <Right>
@@ -39,37 +39,25 @@ export const Header = () => {
 const Container = styled.nav`
     width: 100%;
     position: relative;
-    height: 0;
-    transition: var(--header-changing-positon-transition-duraction);
-
-    &:not(.homepage){
-        height: var(--Header-height); /* Introduz o tamanho comun do header na parte superior da página */
-    }
+    height: var(--Header-height); /* Introduz o tamanho comun do header na parte superior da página */
 `;
 
 const Nav = styled.nav`
     z-index: 2;
     backdrop-filter: blur(10px);
-    position: absolute;
     width: 100%;
-    height: 100%;
     padding: 0 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    top: 80vh;
+    transition: var(--header-hover-animation-duraction);
+    height: var(--Header-height); //Introduz o tamanho comun do header na parte superior da página
+    position: fixed;
+    top: 0;
+    background: linear-gradient(170deg, rgba(102, 16, 242, 0.2) 18%, rgba(60, 0, 136, 0) 40%), linear-gradient(336deg, rgba(111, 66, 193, .2) 8%, rgba(60, 0, 136, 0) 40.5%);
 
     @media only screen and (min-height: 1475px){ /* Evitar header ultrapassar seu lugar acima de 1475px de height */
         top: 78vh;
-    }
-
-
-    &:not(.homepage){
-        transition: var(--header-hover-animation-duraction);
-        height: var(--Header-height); //Introduz o tamanho comun do header na parte superior da página
-        position: fixed;
-        top: 0;
-        background: linear-gradient(170deg, rgba(102, 16, 242, 0.2) 18%, rgba(60, 0, 136, 0) 40%), linear-gradient(336deg, rgba(111, 66, 193, .2) 8%, rgba(60, 0, 136, 0) 40.5%);
     }
 
     &:active{ /* Introduz o estilo padrão na página inicial quando o usuário scroll suficiente */

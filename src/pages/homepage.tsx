@@ -6,7 +6,6 @@ export const HomePage = () => {
     return(
         <Container>
             <CardSection/>
-            <HeaderPosition/>
             <Contents/>
         </Container>
     )
@@ -14,8 +13,4 @@ export const HomePage = () => {
 
 const Container = styled.div`
 
-`;
-
-const HeaderPosition = styled.div`
-    height: var(--Header-height);
 `;
