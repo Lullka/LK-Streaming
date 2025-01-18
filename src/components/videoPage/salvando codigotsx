@@ -1,0 +1,53 @@
+import React, { useState, useRef, useEffect } from 'react';
+
+const VideoPlayer = () => {
+  const [controlsVisible, setControlsVisible] = useState(true);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+
+  // Função para mostrar controles e reiniciar temporizador
+  const showControls = () => {
+    setControlsVisible(true);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setControlsVisible(false), 3000);
+  };
+
+  useEffect(() => {
+    // Exibir controles ao mover o mouse
+    const handleMouseMove = () => {
+      showControls();
+    };
+
+    const container = videoContainerRef.current;
+    if (container) {
+      container.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (container) container.removeEventListener('mousemove', handleMouseMove);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={videoContainerRef}
+      style={{ position: 'relative', cursor: controlsVisible ? 'default' : 'none' }}
+    >
+      <video src="seu-video.mp4" controls={false} />
+      <div
+        className="controls"
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          width: '100%',
+          display: controlsVisible ? 'flex' : 'none',
+        }}
+      >
+        {/* Seus controles: Play, Pause, etc. */}
+      </div>
+    </div>
+  );
+};
+
+export default VideoPlayer;
