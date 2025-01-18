@@ -15,3 +15,22 @@ Será recomendado um HD/SDD para a hospedagem de seus arquivos ou a utilização
 ## Previsões
 
 Estou nesse projeto apenas eu, mas pretendo lança-lo até o final do ano! Até lá darei mais atualizações de como está indo o projeto
+
+## Status Atual
+
+[🔥] : Fase atual \
+[ ... ] : Fase futura (Não iniciada) \
+[✅] : Fase finalizada 
+
+
+- Fase Inicial: Criação de páginas, estilização e pequenas funções [🔥]
+- Fase VideoPlayer: Estilização completa e funções diferentes [ ... ]
+- Criando banco de dados: Encontrará se em outro repositório [ ... ]
+- Fase de dados: Criando interações entre o front e o back através de uma API [ ... ]
+- Criação de siteAdmin: site para o usuário mestre colocar/apagar seus filmes do site  e entre outros [ ... ]
+- Liberação Alpha: Procurando bugs e adicionando novas funções [ ... ]
+- Versão Final: Versão final estável que todos já podem usar [ ... ]
+
+## Futuros updates de plataforma:
+- Criação de um aplicativo móvel
+- Ampliando para as SmartTVs Tizen(samsung) e WebOS(LG)
