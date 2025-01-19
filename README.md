@@ -12,6 +12,12 @@ Será recomendado um HD/SDD para a hospedagem de seus arquivos ou a utilização
 
 ---
 
+## 🧑‍🔬 Tecnologias utilizadas
+
+![Tecnologias utilizadas](https://skillicons.dev/icons?i=react,ts,vite)
+
+---
+
 ## ☁️ Previsões
 
 Sou o único membro deste projeto, porém, almejo o lançamento até o final do ano.  Até lá, disponibilizarei atualizações periódicas sobre o progresso. ⏳️
