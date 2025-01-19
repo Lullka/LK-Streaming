@@ -34,3 +34,7 @@ Estou nesse projeto apenas eu, mas pretendo lança-lo até o final do ano! Até 
 ## Futuros updates de plataforma:
 - Criação de um aplicativo móvel
 - Ampliando para as SmartTVs Tizen(samsung) e WebOS(LG)
+
+
+### Inspirações
+Netflix, Crunchyroll, Disney+, Paraumount
