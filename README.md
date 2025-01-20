@@ -2,6 +2,7 @@
 
 Desenvolvi este mini site com o propósito de oferecer a qualquer usuário um ambiente acessível para assistir a filmes, séries e outros conteúdos, mantendo o registro do ponto em que o usuário parou de assistir e incorporando recursos adicionais que melhoram a experiência do usuário.
 
+[![Deploy](https://user-images.githubusercontent.com/71772559/178192066-d52e0cf7-906e-4baa-80f3-4b49dde153c0.png)](https://lullka.github.io/LK-Streaming/)
 ---
 
 ## 🌐 Como funcionará? 
