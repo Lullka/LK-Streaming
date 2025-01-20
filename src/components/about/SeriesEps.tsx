@@ -8,11 +8,11 @@ export const SerieEps = () => {
     return(
         <Container>
             <Seasons>
-                <button onClick={() => setSeasonModal(!SeasonModal)} className={SeasonModal ? "seasonList" : "seasonList active"}>
+                <button onClick={() => setSeasonModal(!SeasonModal)} className={SeasonModal ? "seasonList desactive" : "seasonList"}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="arrow-ios-downward"><rect width="24" height="24" opacity="0"/><path d="M12 16a1 1 0 0 1-.64-.23l-6-5a1 1 0 1 1 1.28-1.54L12 13.71l5.36-4.32a1 1 0 0 1 1.41.15 1 1 0 0 1-.14 1.46l-6 4.83A1 1 0 0 1 12 16z"/></g></g></svg>
                     <h4>Temporada 1</h4>
                 </button>
-                <SeasonsModal className={SeasonModal ? "active" : ""}>
+                <SeasonsModal className={SeasonModal ? "" : "desactive"}>
                     <button className="active"><span>Temporada 1</span><span>&#40;7 episódios&#41;</span></button>
                     <button><span>Temporada 2</span><span>&#40;10 episódios&#41;</span></button>
                     <button><span>Temporada 3</span><span>&#40;9 episódios&#41;</span></button>
@@ -73,11 +73,11 @@ const Seasons = styled.div`
         fill: var(--Seriado-btn-season-list-hover-color);
     }
 
-    button.seasonList.active{
+    button.seasonList.desactive{
         background-color: var(--modal-default-background-color);
     }
 
-    button.seasonList.active svg{
+    button.seasonList.desactive svg{
         transform: rotate(180deg);
     }
 
@@ -97,7 +97,7 @@ const SeasonsModal = styled.div`
     transition: var(--default-hover-duraction);
     padding: 0 0 8px 0;
 
-    &.active{
+    &.desactive{
         pointer-events: none;
         opacity: 0;
     }

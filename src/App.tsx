@@ -7,23 +7,10 @@ import { VideoPage } from "./pages/player.tsx";
 import { SearchPage } from "./pages/search.tsx";
 import { FilmsPage } from "./pages/filmsPage.tsx";
 import { SeriesPage } from "./pages/seriesPage.tsx";
+import { UserProfile } from "./pages/yourProfile.tsx";
 /* import { Teste } from "./pages/teste.tsx"; */
 
 function App() {
- /*  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      console.log(`Tecla pressionada: ${event.key}`);
-    };
-
-    // Adiciona o listener no nível global
-    window.addEventListener('keydown', handleKeyDown);
-
-    // Remove o listener ao desmontar o componente
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []); */
-  
   return (
     <BrowserRouter>
       <GlobalStyle/>
@@ -37,6 +24,7 @@ function App() {
         <Route path="/search" element={<SearchPage/>}/>
         <Route path="/films" element={<FilmsPage/>}/>
         <Route path="/series" element={<SeriesPage/>}/>
+        <Route path="/user" element={<UserProfile/>}/>
         <Route path="*" element={<Navigate to='/browse'/>}/>
       </Routes>
     </BrowserRouter>

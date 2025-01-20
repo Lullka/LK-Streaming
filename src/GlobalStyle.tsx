@@ -12,7 +12,8 @@ export const GlobalStyle = createGlobalStyle`
 
     :root{
         --default-background-color: #000;
-        --Header-height: 75px;
+        --Header-height: 70px;
+        --mobile-Header-height: 60px;
         --header-text-color-hover: #ae8aff;
         --header-background-color-hover: #9b65ff30;
         --header-hover-animation-duraction: 0.3s ease-in-out;
@@ -33,6 +34,8 @@ export const GlobalStyle = createGlobalStyle`
         --Like-Button-transition: 0.2s;
         --background-text-modal: #9b65ff30;
         --sucess: #38cf5a;
+        --changing_card_backgroundColor: #939595;
+        --changing_card_span_color: #ae8aff;
     }
 
     html{
