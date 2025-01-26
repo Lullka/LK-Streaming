@@ -36,10 +36,34 @@ export const GlobalStyle = createGlobalStyle`
         --sucess: #38cf5a;
         --changing_card_backgroundColor: #939595;
         --changing_card_span_color: #ae8aff;
+        --home-cards-hover: 0.3s;
+        --watch-button-background-color: #ae8aff;
     }
 
     html{
         scroll-behavior: smooth;
+    }
+
+    *::-webkit-scrollbar{
+        width: 8px;
+        height: 100%;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #252835;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: #484d64;
+        border-radius: 15px;
+    }
+
+    *::-webkit-scrollbar-thumb:hover{
+        background: #747c9d;
+    }
+
+    *::-webkit-scrollbar-thumb:active{
+        background: #626984;
     }
 
     body{

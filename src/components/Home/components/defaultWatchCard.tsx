@@ -182,6 +182,8 @@ const CardInfo = styled.div`
     }
 
     @media only screen and (max-width: 740px){
+
+    
         a{
             font-size: 12px;
         }
@@ -200,20 +202,6 @@ const CardInfo = styled.div`
     }
 
     @media only screen and (max-width: 580px){
-        a{
-            font-size: 10px;
-        }
-
-        h3{
-            font-size: 16px;
-        }
-
-        span:nth-child(3){
-            font-size: 10px;
-        }
-
-        span:nth-child(4){
-            font-size: 16px;
-        }
+        display: none;
     }
 `;

@@ -83,6 +83,7 @@ const BackCard = styled.div`
     flex-direction: column;
     position: relative;
     gap: 5px;
+    transition: var(--home-cards-hover);
 
     img{
         width: 16vw;
@@ -103,6 +104,12 @@ const BackCard = styled.div`
     @media only screen and (max-width: 800px){
         img{
             width: 22vw;
+        }
+    }
+
+    @media only screen and (max-width: 710px){
+        &:hover{
+            background: rgba(19, 19, 19, 1);
         }
     }
 
@@ -136,11 +143,15 @@ const FrontCard = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden; /* Evitar vazamento do blur da img */
-    transition: 0.3s;
+    transition: var(--home-cards-hover);
     opacity: 0;
 
     &:hover{
         opacity: 1;
+    }
+
+    @media only screen and (max-width: 710px){
+        display: none;
     }
 `;
 

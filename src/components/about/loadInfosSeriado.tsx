@@ -24,6 +24,10 @@ export const LoadInfosSeriado = () => {
                     </Classification>
                     <InfoExtra width="270px" height="50px" SVGSize="30px" fontSize="16px"/>
                     <Actions>
+                        <Link to="/watch">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproduzir</title><path d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>
+                            Assistir
+                        </Link>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="bookmark"><rect width="24" height="24" opacity="0"/><path d="M6.09 21.06a1 1 0 0 1-1-1L4.94 5.4a2.26 2.26 0 0 1 2.18-2.35L16.71 3a2.27 2.27 0 0 1 2.23 2.31l.14 14.66a1 1 0 0 1-.49.87 1 1 0 0 1-1 0l-5.7-3.16-5.29 3.23a1.2 1.2 0 0 1-.51.15zm5.76-5.55a1.11 1.11 0 0 1 .5.12l4.71 2.61-.12-12.95c0-.2-.13-.34-.21-.33l-9.6.09c-.08 0-.19.13-.19.33l.12 12.9 4.28-2.63a1.06 1.06 0 0 1 .51-.14z"/></g></g></svg>
                             Adicionar à fila
@@ -65,10 +69,25 @@ export const LoadInfosSeriado = () => {
 
 const Container = styled.div`
     padding: 30px 60px 0 60px;
+    background: linear-gradient(0deg, var(--default-background-color) 0%, var(--default-background-color) 65%, rgba(0,212,255,0) 100%);
+
+    @media only screen and (max-width: 1048px){
+        padding: 30px 30px 0 30px;
+    }   
+
+    @media only screen and (max-width: 460px){
+        padding: 15px 15px 0 15px;
+    }
 `;
 
 const InfosActionContainer = styled.div`
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    @media only screen and (max-width: 780px){
+        gap: 0px;
+    }
 `;
 
 const InfoContents = styled.div`
@@ -111,6 +130,7 @@ const Actions = styled.div`
     gap: 20px;
     margin-top: 10px;
 
+    a,
     button{
         padding: 5px 20px;
         display: flex;
@@ -124,26 +144,79 @@ const Actions = styled.div`
         cursor: pointer;
         user-select: none;
         border-radius: 5px;
+        text-decoration: none;
     }
 
-    button:nth-child(2){
+    a{
+        width: 100%;
+        display: none;
+        background: var(--watch-button-background-color);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+
+    button:nth-child(2):hover,
+    button:nth-child(2):hover svg{
+        background: var(--Seriado-add-to-list-border-color);
+        fill: #fff;
+    }
+
+    button:nth-child(3){
         color: #A0A0A0;
         border: 3px solid transparent;
     }
 
-    button:nth-child(2):hover{
+    button:nth-child(3):hover{
         background-color: #141519;
         border: 3px solid #141519;
     }
 
+    a svg,
     button svg{
         fill: var(--Seriado-add-to-list-border-color);
         width: 35px;
         height: 35px;
     }
 
-    button:nth-child(2) svg{
+    button:nth-child(3) svg{
         stroke: #A0A0A0;
+    }
+
+    @media only screen and (max-width: 780px){
+        flex-wrap: wrap;
+        gap: 10px;
+
+        a,
+        button{
+            justify-content: center;
+            font-size: 19px;
+        }
+
+        a{
+            display: flex;
+        }
+
+        button:nth-child(2),
+        button:nth-child(3){
+            width: 49.2%;
+        }
+
+        button:nth-child(3){
+            color: #A0A0A0;
+            border: 3px solid #A0A0A0;
+        }
+    }
+
+    @media only screen and (max-width: 690px){
+        gap: 5px;
+    }
+
+    @media only screen and (max-width: 540px){
+        flex-direction: column;
+
+        button:nth-child(2),
+        button:nth-child(3){
+            width: 100%;
+        }
     }
 `;
 
@@ -194,7 +267,10 @@ const ContainerToWatch = styled.div`
 
     @media only screen and (min-width: 890px){
         margin-top: 10px;
-        width: 44vw;
+    }
+
+    @media only screen and (max-width: 780px){
+        display: none;
     }
 `;
 
@@ -236,5 +312,10 @@ const ButtonWatch = styled.div`
 
     &:hover svg{
         fill: #d3d3d3;
+    }
+
+    @media only screen and (max-width: 930px){
+        width: 330px;
+        height: 190px;
     }
 `;

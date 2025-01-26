@@ -453,7 +453,7 @@ const CardActions = styled.div`
         font-weight: 600;
         color: #FFf;
         border: 2px solid rgba(255, 255, 255, 0.25);
-        background: var(--header-text-color-hover);
+        background: var(--watch-button-background-color);
         border-radius: 5px;
         text-decoration: none;
     }

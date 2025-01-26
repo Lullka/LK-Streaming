@@ -77,6 +77,12 @@ const Container = styled.div`
         background: #1b1b1b;
     }
 
+    @media only screen and (max-width: 710px){
+        ul{
+            gap: 15px;
+        }
+    }
+
     @media only screen and (max-width: 590px){
         ul{
             gap: 0px;

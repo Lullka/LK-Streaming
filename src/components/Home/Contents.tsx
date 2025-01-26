@@ -23,7 +23,7 @@ export const Contents = () => {
                 starNumbers="65.4K"
             />
             <GenerateNormalList /* Apenas dados fixos. Futuramente os dados serão através de objeto */
-                listName="Séries recém lançados"
+                listName="Séries recém lançadas"
                 CardsNumber={12}
                 keyProp={1} 
                 link={'/about'}

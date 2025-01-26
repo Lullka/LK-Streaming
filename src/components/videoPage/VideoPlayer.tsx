@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { InfoExtra } from "../extra/infoextra";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export const VideoPlayer = () => {
     const [VideoPlayerStatus, setVideoPlayerStatus] = useState<boolean>(true); /* False: paused */
@@ -37,11 +37,6 @@ export const VideoPlayer = () => {
 
     const Navigate = useNavigate();
     const Teste = true;
-    
-
-    useEffect(() => {
-        alert('O player personalizado ainda está em faze de estilização e alguns estudos sobre como melhorar seu desempenho. Enquanto isso, apenas o player padrão está disponível')
-    }, [])
 
     return(
         <Container>

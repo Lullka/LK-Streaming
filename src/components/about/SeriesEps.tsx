@@ -29,8 +29,10 @@ export const SerieEps = () => {
                                         src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/33e6a8e90a15d3f7d1b619a03d663b31.jpg"
                                         alt={`Episode ${index + 1}`}
                                     />
-                                    <h4>Episode {index + 1}</h4>
-                                    <span>Leg | Dub</span>
+                                    <div>
+                                        <h4>Episode {index + 1}</h4>
+                                        <span>Leg | Dub</span>
+                                    </div>
                                 </CardEpisode>
                             </Link>
                         </li>
@@ -43,6 +45,16 @@ export const SerieEps = () => {
 
 const Container = styled.div`
     padding: 15px 60px 0 60px;
+    background-color: var(--default-background-color);
+
+    @media only screen and (max-width: 1024px){
+        padding: 30px 30px 0 30px;
+        margin-top: -10px; /* Temporario: Evitar que apareça o fundo da imagem */
+    }  
+
+    @media only screen and (max-width: 460px){
+        padding: 15px 15px 0 15px;
+    }
 `;
 
 const Seasons = styled.div`
@@ -124,23 +136,30 @@ const SeasonsModal = styled.div`
 `;
 
 const Episode = styled.div`
-    height: 300px;
     user-select: none;
     
     ul{
         list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);/ /* repeat(4, 1fr) o 4 equivale a 4 cards mostrados */
+        /* grid-template-columns: repeat(auto-fit, minmax(415px, 1fr));  */
+        /* grid-template-columns: repeat(auto-fit, 1fr); */ /* auto-fit significa que ele preencherá com a quantidade certa a depender do tamanho */
+        gap: 15px;
     }
     
     ul a{
         text-decoration: none;
     }
+
+    @media only screen and (max-width: 900px){
+        ul{
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 15px;
+        }
+    }
 `;
 
 const CardEpisode = styled.div`
-    width: 21vw;
     padding: 0.4vw;
     display: flex;
     flex-direction: column;
@@ -162,5 +181,21 @@ const CardEpisode = styled.div`
     }
     &:hover{
         background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    @media only screen and (max-width: 515px){
+        flex-direction: row;
+
+        img{
+            width: 30vw;
+            min-width: 170px;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+            padding: 12px 10px;
+            gap: 5px;
+        }
     }
 `;

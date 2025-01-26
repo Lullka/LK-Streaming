@@ -16,7 +16,7 @@ export const Header = () => {
             <Nav>
                 <Left>
                     <Humburguer className={HamburguerMenu ? "active" : ""} onClick={() => setHamburguerMenu(!HamburguerMenu)}><span></span></Humburguer>
-                    <Link to={'/'}><img src="/svg/lkLogo.svg" alt="Logo do Luka" /></Link>
+                    <Link to={'/'}><img src="https://raw.githubusercontent.com/Lullka/LK-Streaming/417243cadb867132308aa24fcb505d61f61b24f3/public/svg/lkLogo.svg" alt="Logo do Luka" /></Link>
                 </Left>
                 <Center className={HamburguerMenu ? "active" : ""}>
                     <ul>
@@ -42,7 +42,7 @@ const ButtonLogin = () => {
 
     return(
         <ContainerButtonLogin>
-            <StyleButtonLogin onClick={() => setAccountModal(!AccountModal)}><img src="/imgs/perfilPhoto.jpg" alt="User Photo" /> </StyleButtonLogin>
+            <StyleButtonLogin onClick={() => setAccountModal(!AccountModal)}><img src="https://github.com/Lullka/LK-Streaming/blob/main/public/imgs/perfilPhoto.jpg?raw=true" alt="User Photo" /> </StyleButtonLogin>
             <ModalButtonLogin className={AccountModal ? "active" : ""}>
                 <Link to={'/user'}>Seu perfil</Link>
                 <button>Deslogar</button>
@@ -117,6 +117,10 @@ const Left = styled.div`
     display: flex;
     align-items: center;
     gap: 25px;
+
+    img{
+        pointer-events: none;
+    }
 `;
 
 const Center = styled.div`
@@ -284,6 +288,24 @@ const Humburguer = styled.button`
 
     @media only screen and (max-width: 780px){
         display: flex;
+    }
+
+    @media only screen and (max-width: 580px){
+        width: 35px;
+
+        span{
+            height: 3px;
+        }
+
+        &:before{
+            height: 3px;
+            top: 5px;
+        }
+
+        &:after{
+            bottom: 5px;
+            height: 3px;
+        }
     }
 `;
 

@@ -6,7 +6,8 @@ import { SerieEps } from "../components/about/SeriesEps";
 
 export const InfosAboutSeries = () => {
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        /* window.scrollTo({ top: 0, behavior: 'smooth' }); */
     }
 
     useEffect(() => {
@@ -15,11 +16,11 @@ export const InfosAboutSeries = () => {
 
     return(
         <Container>
-            <ContentImg/>
+            <ContentImg/>{/* Criado para aplicar um background para quando a imagem de prévia for renderizada para aparelhos menores ou iguais a 800px */}
             <LoadInfosSeriado/>
             <SerieEps/>
         </Container>
     );
 };
 
-const Container = styled.div``;
+const Container = styled.section``;
