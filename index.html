@@ -7,9 +7,61 @@
     <meta criador="Luka Piancó">
     <meta github="Lullka">
     <title>LK Movies</title>
-    <script type="module" crossorigin src="/LK-Streaming/assets/index-bPDZSAm7.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+    <script>
+      function isBrowserCompatible() {
+        try {
+          // Testa funcionalidades ES5 e compatibilidade básica
+          eval('var test = function() { return true; };'); // Funções normais
+          JSON.parse('{}'); // JSON Parsing
+          Array.isArray([]); // Verifica suporte a Array.isArray
+          'querySelector' in document; // Seletores modernos
+          
+          // Testa APIs básicas que podem não estar disponíveis no Tizen 4.0
+          return (
+            'fetch' in window && // Fetch API
+            'Promise' in window && // Promises
+            'addEventListener' in window && // Event Listener moderno
+            'localStorage' in window && // Armazenamento local
+            'CustomEvent' in window // Eventos personalizados
+          );
+        } catch (e) {
+          return false; // Retorna falso se qualquer verificação falhar
+        }
+      }
+
+      if (!isBrowserCompatible()) {
+        document.getElementById('root').innerHTML = `
+          <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+            <h1>Navegador da TV não suportado</h1>
+            <p>Seu navegador da TV não suporta funcionalidades necessárias para usar o <strong>LK Movies</strong>.</p>
+            <p>Por favor, atualize o software da sua TV ou entre em contato com o suporte.</p>
+          </div>
+        `;
+      } else {
+        // Eventos adicionais para TVs com Tizen 4.0
+        document.addEventListener('DOMContentLoaded', () => {
+          console.log('Aplicação carregada!');
+        });
+
+        // Carrega o script principal de React
+        const script = document.createElement('script');
+        script.type = 'module'; // Evita `module` para Tizen 4.0
+        script.src = '/src/main.tsx'; // Certifique-se de compilar o React para ES5
+        document.body.appendChild(script);
+
+        script.onerror = () => {
+          document.getElementById('root').innerHTML = `
+            <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+              <h1>Erro ao carregar o aplicativo</h1>
+              <p>Houve um problema ao carregar o <strong>LK Movies</strong>.</p>
+              <p>Por favor, tente novamente mais tarde.</p>
+            </div>
+          `;
+        };
+      }
+    </script>
   </body>
 </html>
